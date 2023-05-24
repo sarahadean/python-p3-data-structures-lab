@@ -35,11 +35,17 @@ def get_names(spicy_foods):
 # ---------------------------------
 #takes a list of spicy_foods and returns a list of dictionaries where the heat level of the food is greater than 5.
 def get_spiciest_foods(spicy_foods):
-    extra_spicy = []
-    for meal in spicy_foods:
-        if meal["heat_level"] > 5:
-            extra_spicy.append(meal)
-    return extra_spicy
+    ###long version##
+    # extra_spicy = []
+    # for meal in spicy_foods:
+    #     if meal["heat_level"] > 5:
+    #         extra_spicy.append(meal)
+    # return extra_spicy
+
+##shorter version
+    return [meal for meal in spicy_foods if meal["heat_level"] > 5]
+
+print(get_spiciest_foods(spicy_foods))
 
 # print(get_spiciest_foods(spicy_foods))
 
@@ -84,6 +90,8 @@ def get_average_heat_level(spicy_foods):
     for meal in spicy_foods:
         heat_sum.append(meal["heat_level"])
     return sum(heat_sum)/length
+
+
 
 
 # Define a function create_spicy_food() that takes a list of spicy_foods and a new spicy_food and returns the original list with the new spicy_food added.  
